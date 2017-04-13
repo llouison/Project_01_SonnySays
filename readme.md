@@ -10,10 +10,10 @@ As a user, I want to play a fun and interactive single player game with clear in
 - Win/Loss case
 
 ## Wireframes
-![Sonny Says Wireframe1](assets/sonnysays_wireframe1.png)
-![Sonny Says Wireframe2](assets/sonnysays_wireframe2.png)
-![Sonny Says Wireframe3](assets/sonnysays_wireframe3.png)
-![Sonny Says Wireframe4](assets/sonnysays_wireframe4.png)
+![Sonny Says Wireframe1](assets/sonnysayS_wireframe1.png)
+![Sonny Says Wireframe2](assets/sonnysayS_wireframe2.png)
+![Sonny Says Wireframe3](assets/sonnysayS_wireframe3.png)
+![Sonny Says Wireframe4](assets/sonnysayS_wireframe4.png)
 
 ## Technologies Used
 ## Approach taken
