@@ -1,7 +1,16 @@
-<!--A readme.md file which must include:
-Explanations of the technologies used
-Approach taken
-User stories
-Wireframes
-How-to-use instructions
-Unsolved problems-->
+# Project #1 - Sonny Says
+
+## User Story
+As a user, I want to play a fun and interactive single player game with clear instructions that gives instant feedback on whether I win or lose. 
+
+### Acceptance Criteria:
+- Single player game
+- Clear instructions
+- Interactive
+- Win/Loss case
+
+## Wireframes
+## Technologies Used
+## Approach taken
+## How-to-use Instructions
+## Unsolved Problems
