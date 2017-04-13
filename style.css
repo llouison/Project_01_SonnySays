@@ -101,14 +101,14 @@ h1{
     top: 120px;
     right: 135px;
 }
-#instructions_title{
+#instructions_label{
     display: block;
     text-align: left;
     position: absolute;
     top: 45px;
     right: 30px;
 }
-#instructions_title:hover{
+#instructions_label:hover{
     color: #f37748;
     transition: 0.5s ease;
     text-decoration: underline;
@@ -132,12 +132,154 @@ h1{
 #bunny{
     width: 300px;
     height: 500px;
-    background: #EF5C6E;
     display: block;
     margin: 0 auto;
     position: absolute;
     bottom: 100px;
     left: 40vw;
+    z-index: 1;
+}
+.left_ear{
+    height: 200px;
+    width: 75px;
+    box-sizing: border-box;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 55px;
+    background: #EF5C6E;
+    transform: rotate(-10deg);
+}
+.left_innerear{
+    height: 150px;
+    width: 35px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background: #f2dcde;
+    margin: 0 auto;
+    position: relative;
+    bottom: -15px;
+}
+.right_ear{
+    height: 200px;
+    width: 75px;
+    box-sizing: border-box;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 80px;
+    background: #EF5C6E;
+    transform: rotate(10deg);
+}
+.right_innerear{
+    height: 150px;
+    width: 35px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background: #f2dcde;
+    margin: 0 auto;
+    position: relative;
+    bottom: -15px;
+}
+.bunny_head{
+    height: 200px;
+    width: 250px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 375px;
+    background: #EF5C6E;
+    left: 25px;
+    border: 1px solid brown;
+}
+.left_eye{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-bottom: 5px solid transparent;
+    border-top: 10px solid #21130C;
+    border-radius: 50%;
+    left: 75px;
+    top: 50px;
+    transform: rotate(-5deg);
+    display: inline-block;
+}
+.right_eye{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-bottom: 5px solid transparent;
+    border-top: 10px solid #21130C;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transform: rotate(5deg);
+    display: inline-block;
+}
+.nose{
+    position: relative;
+    width: 20px; 
+    height: 15px; 
+    background: #f2dcde;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    display: inline-block;
+    left: 45px;
+    top: 65px;
+}
+.bunny_body{
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background: #EF5C6E;
+}
+.left_leg{
+    height: 50px;
+    width: 100px;
+    background: #EF5C6E;
+    border: 1px solid black;
+    position: relative;
+    bottom: 255px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 15%;
+    display: inline-block;
+}
+.right_leg{
+    height: 50px;
+    width: 100px;
+    background: #EF5C6E;
+    border: 1px solid black;
+    position: relative;
+    bottom: 255px;
+    left: 90px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 25%;
+    display: inline-block;
+}
+.left_ear:hover{
+    transform: rotate(-30deg);
+    transition: all 0.2s ease-in-out;
+}
+.right_ear:hover{
+    transform: rotate(30deg);
+    transition: all 0.2s ease-in-out;
+}
+.left_leg:hover{
+    transform: translate(-20px,0);
+    transition: all 0.2s ease-in-out;
+}
+.right_leg:hover{
+    transform: translate(20px,0);
+    transition: all 0.2s ease-in-out;
 }
 /*grass*/
 #ground {
@@ -162,7 +304,7 @@ h1{
     position: absolute;
     display: inline-block;
     bottom: -1vh;
-    animation: grasssway 2s infinite alternate;
+    animation: grassmove 0.5s infinite alternate;
 }
 .g1{
     transform: rotate(-7deg);
@@ -180,7 +322,7 @@ h1{
     transform: rotate(-7deg);
     right: 12vw;
 }
-@keyframes grasssway {
+@keyframes grassmove {
   0%{
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;

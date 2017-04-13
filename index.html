@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Sonny Says</h1>
-        <p id="instructions_title">Instructions</p>
+        <p id="instructions_label">Instructions</p>
         <section class="instructions">
             <p>Sonny the Bunny needs your help making an Easter dance. Sonny can move his ears and his feet, but he has trouble remembering what he did.</p> 
             <p>Help Sonny remember his dance by repeating the sequence of moves each round. Simply click the body parts in the right order when it's your turn.</p>
@@ -23,7 +23,23 @@
             <p id="start">Start</p>
             <p id="counter">1</p>
         </section>
-        <div id="bunny"></div>
+        <div id="bunny">
+            <div class="left_ear">
+                <div class="left_innerear"></div>
+            </div>
+            <div class="right_ear">
+                <div class="right_innerear"></div>
+            </div>
+            <div class="bunny_body"></div>
+            <div class="bunny_head">
+                <div class="left_eye"></div>
+                <div class="right_eye"></div>
+                <div class="nose"></div>
+            </div>
+            <div class="left_leg"></div>
+            <div class="right_leg"></div>
+
+        </div>
         <section class="ground_container">
             <div class="grass_container">
                 <div class="grass g1"></div>
@@ -32,7 +48,7 @@
                 <div class="grass g4"></div>
             </div>
             <div id="ground">
-                <p>Created by <a href="https://github.com/llouison">Lisa</a></p>
+                <p>Created by <a href="https://github.com/llouison" target="_blank">Lisa</a></p>
             </div>
         </section>
         <script src="app.js"></script>
