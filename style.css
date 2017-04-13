@@ -1,17 +1,71 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho');
+html{
+    min-height: 100%;
+}
 body{
-    background: #C7EAE4;
+    background: linear-gradient(#e8f7f4,#C7EAE4);
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
-    color: #3c3c3c;
+    color: #495159;
+    overflow: hidden;
 }
 h1{
     font-family: 'Rancho', cursive;
     font-size: 90px;
     color: #59C9D5;
+    text-shadow: 2px 2px 4px #087E8B;
     text-align: center;
     padding-top: 10px;
 }
+/*clouds*/
+.cloud_container{
+    height: 20vh;
+    width: 5076px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.cloud{
+    background: url("assets/cloud.png");
+    width: 200px;
+    height: 110px;
+    opacity: 0.7;
+    position: relative;
+    display: inline-block;
+    animation: floatingclouds 80s linear infinite;
+}
+.c1{
+    top: 30%;
+    left: 300px;
+}
+.c2{
+    transform: scale(0.6);
+	opacity: 0.6;
+    top: 15%;
+    left: 500px;
+    animation: floatingclouds 60s linear infinite;
+}
+.c3{
+    transform: scale(0.7);
+	opacity: 0.5;
+    top: -10%;
+    left: -200px;
+    animation: floatingclouds 70s linear infinite;
+}
+.c4{
+    top: 3%;
+    left: -800px;
+    animation: floatingclouds 50s linear infinite;
+}
+@keyframes floatingclouds {
+    0%{
+        left: -300px;
+    }
+    100%{
+        left: 1000px;
+    }
+}
+/*buttons*/
 .buttons{
     display: inline-block;
     position: absolute;
@@ -26,14 +80,17 @@ h1{
     padding: 10px 30px;
     border-radius: 10px;
     background: #4BC6B9;
+    box-shadow: 2px 4px 3px #b3d8d2;
     display: inline-block;
 }
 #start:hover{
     background: #67dbcf;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 #counter {
-    width: 100px;
+    width: 50px;
+    height: 50px;
     font-size: 50px;
     text-align: center;
     padding: 20px;
@@ -42,18 +99,20 @@ h1{
     display: inline-block;
     position: relative;
     top: 120px;
-    right: 160px;
+    right: 135px;
 }
 #instructions_title{
     display: block;
     text-align: left;
     position: absolute;
     top: 45px;
-    right: 20px;
+    right: 30px;
 }
 #instructions_title:hover{
     color: #f37748;
     transition: 0.5s ease;
+    text-decoration: underline;
+    text-decoration-style: dotted;
 }
 .instructions{
     width: 430px;
@@ -64,25 +123,81 @@ h1{
     position: absolute;
     top: 180px;
     right: 20px;
-   
-    /*visibility: visible;*/
+    visibility: hidden;
 }
 .instructions p {
     padding: 10px;
 }
+/*bunny*/
 #bunny{
     width: 300px;
     height: 500px;
     background: #EF5C6E;
     display: block;
     margin: 0 auto;
-    position: relative;
-    top: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 40vw;
 }
-#grass {
+/*grass*/
+#ground {
     height: 100px;
     width: 100vw;
     background: #86AF49;
     position: absolute;
     bottom: 0;
+}
+.grass_container{
+    width: 100vw;
+    height: 100px;
+    position: absolute;
+    bottom: 100px; 
+}
+.grass{
+    height: 9vmin;
+    width: 1vmin;
+    border-right: 1px solid #86AF49;
+    border-left: 1px solid #86AF49;
+    background: #86AF49;
+    position: absolute;
+    display: inline-block;
+    bottom: -1vh;
+    animation: grasssway 2s infinite alternate;
+}
+.g1{
+    transform: rotate(-7deg);
+    left: 10vw;
+}
+.g2{
+    transform: rotate(7deg);
+    left: 12vw;
+}
+.g3{
+    transform: rotate(7deg);
+    right: 10vw;
+}
+.g4{
+    transform: rotate(-7deg);
+    right: 12vw;
+}
+@keyframes grasssway {
+  0%{
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+  }
+  50% {
+    border-top-right-radius: 30%;
+    border-top-left-radius: 70%;
+  }
+  100% {
+    border-top-right-radius: 20%;
+    border-top-left-radius: 80%;
+  }
+}
+#ground p{
+    font-size: 25px;
+    position: absolute;
+    bottom: 5px;
+    color: #b6d686;
+    left: 50%;
 }
