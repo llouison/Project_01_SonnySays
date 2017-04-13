@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho');
 body{
-    background: red;
+    background: #C7EAE4;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#bunny{
+    width: 300px;
+    height: 500px;
+    background: #EF5C6E;
+}
+#grass {
+    height: 200px;
+    width: 800px;
+    background: #86AF49;
+}
+h1{
+    font-family: 'Rancho', cursive;
+    font-size: 42px;
+    color: #4BC6B9;
 }
