@@ -248,6 +248,38 @@ h1{
     border-radius: 50%;
     z-index: 1;
 }
+.left_paw{
+    height: 50px;
+    width: 85px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    left: 10px;
+    bottom: 60px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 15%;
+    display: inline-block;
+    z-index: 1;
+    transform: rotate(-90deg);
+}
+.right_paw{
+    height: 50px;
+    width: 85px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    left: 95px;
+    bottom: 60px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 15%;
+    display: inline-block;
+    z-index: 1;
+    transform: rotate(90deg);
+}
 .left_leg{
     height: 50px;
     width: 100px;
@@ -281,6 +313,14 @@ h1{
 }
 .right_ear:hover{
     transform: rotate(30deg);
+    transition: all 0.2s ease-in-out;
+}
+.left_paw:hover{
+    bottom: 80px;
+    transition: all 0.2s ease-in-out;
+}
+.right_paw:hover{
+    bottom: 80px;
     transition: all 0.2s ease-in-out;
 }
 .left_leg:hover{
