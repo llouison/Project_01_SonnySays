@@ -107,7 +107,7 @@ h1 {
     right: 30px;
 }
 #instructions:hover {
-    color: #f37748;
+    color: #EF5C6E;
     transition: 0.5s ease;
     text-decoration: underline;
     text-decoration-style: dotted;
@@ -208,7 +208,10 @@ h1 {
 .egg {
     height: 185px;
     width: 150px;
-    background: #EF5C6E;
+    background: url(assets/chevron.jpg);
+    background-size: 140px 185px;
+    background-position: center;
+    border: 1px solid #f2dcde;
     position: relative;
     left: 70px;
     top: 50px;

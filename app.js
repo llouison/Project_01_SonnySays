@@ -89,7 +89,7 @@ console.log('Let\'s Play Sonny Says!');
         var is_same = computerSequence.length == playerSequence.length && computerSequence.every(function(element, index) {
             return element === playerSequence[index]; 
         });
-         if(is_same && round === 3) {
+         if(is_same && round === 10) {
             startButton.innerHTML = 'You Win!';
             sound2.play();
             setTimeout(function(){
