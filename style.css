@@ -151,7 +151,8 @@ h1{
     border-top-left-radius: 50%;
     display: inline-block;
     position: relative;
-    background: #fafafa;
+    background: #f2dcde;
+    border: 20px solid #fafafa;
 }
 #left_ear{
     left: 55px;
@@ -160,16 +161,6 @@ h1{
 #right_ear{
     left: 80px;
     transform: rotate(10deg);
-}
-.left_innerear, .right_innerear{
-    height: 150px;
-    width: 35px;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    background: #f2dcde;
-    margin: 0 auto;
-    position: relative;
-    bottom: -15px;
 }
 .bunny_head{
     height: 200px;
