@@ -83,8 +83,16 @@ console.log('Let\'s Play Sonny Says!');
         var is_same = computerSequence.length == playerSequence.length && computerSequence.every(function(element, index) {
             return element === playerSequence[index]; 
         });
-         if(is_same && round === 20) {
+         if(is_same && round === 3) {
             startButton.innerHTML = 'You Win!';
+            setTimeout(function(){
+                round = 1;            
+                time = 1000;
+                roundDisplay.innerHTML = round;
+                computerSequence = [];
+                startButton.innerHTML = 'Start'; 
+                document.querySelector('#start').addEventListener('click', playRound);
+            }, 1000);
             return false;
         }
         if(is_same){
@@ -98,8 +106,15 @@ console.log('Let\'s Play Sonny Says!');
         }
         else {
             startButton.innerHTML = 'Uh Oh!';
-            // restartButton.style.display = 'inline-block';
             console.log('game over');
+             setTimeout(function(){
+                round = 1;            
+                time = 1000;
+                roundDisplay.innerHTML = round;
+                computerSequence = [];
+                startButton.innerHTML = 'Start'; 
+                document.querySelector('#start').addEventListener('click', playRound);
+            }, 1000);
             return false;
         }
     }
