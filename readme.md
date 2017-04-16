@@ -16,7 +16,21 @@ As a user, I want to play a fun and interactive single player game with clear in
 ![Sonny Says Wireframe4](assets/sonnysayS_wireframe4.png)
 
 ## Technologies Used
+Sonny Says was created using html5, css3, and vanilla javascript
+
 ## Approach taken
+1. The first thing I tackled was the html and css. Because I'm a visual person, I found it easier to manipulate elements I could see. One big part of my project was testing myself with css animations, so I spent a lot of time working on those.
+- I created moving clouds and grass using keyframe animations
+- I created my bunny using nested div elements, manipulated with border radii
+Once I had the basic site setup and the body parts of my bunny, I began to work on the javascript.
+2. The first thing the javascript does is create the setup for a new game. It locates all the possible moves, and readies the timer, round counter, and empty computer and player sequence arrays.
+3. Using the click event listener, the game is initiated when the player clicks start.
+4. First, the computer pushes a random move into its array and visually cues the player to repeat
+5. It then listens for the player's clicks until the player's array has the same length as its own
+6. Once the two arrays are equal in length, the computer evaluates if the elements in each index are the same
+7. If they are the same, the computer moves on to the next round until the player correctly repeats all 10 moves at which point it displays a win. Then it restarts the game. 
+8. If they are not the same, the computer displays a loss and restarts the game.
+
 ## How-to-use Instructions
 
 ### Objective
