@@ -1,13 +1,12 @@
 console.log('connected');
 
 function startGame(){
-    //creating variables for the game status, round number, time, move sequence
-    // let inProgress = true;
+    //creating variables for the game
     const startButton = document.querySelector('#start');
     const restartButton = document.querySelector('#restart');
     restartButton.style.display = 'none';
     let round = 1;
-    let roundDisplay = document.querySelector('#counter');
+    let roundDisplay = document.querySelector('#display');
     let time = 1000;
     let computerSequence = [];
     let playerSequence = [];
@@ -21,86 +20,91 @@ function startGame(){
     const f = document.querySelector('#right_leg');
     //creating an array of the possible moves
     const possibleMoves = [a, b, c, d, e, f];
-
+    //initiating the game
     playRound();
 
 
 
 
     function playRound(){
-        // disabling the start button and changing the inner html to '...' while the computer plays
+        // disabling the start button
         startButton.removeEventListener('click', startGame);
-        startButton.innerHTML = '...';
-        //creating a for loop that loops through the possible moves, places one into the empty computersequence array and changes its color
+        // changing the inner html to '...' while the computer plays
+        
+        //creating a for loop that loops through the possible moves and places one into the empty computersequence array
         for (let i = 0; i < 1; i++){
             computerSequence.push(possibleMoves[Math.floor(Math.random() * possibleMoves.length)]);
             animateSequence();
         }
-
+    
+        //creating a function that picks each body part in a set amount of time
         function animateSequence(){
             let i = 0;
             const interval = setInterval(function() {
-                gameMove(computerSequence[i]);
-                    i++;
-                    if (i >= computerSequence.length) {
-                        clearInterval(interval);
-                    }
+                computerMove(computerSequence[i]);
+                i++;
+                if (i >= computerSequence.length) {
+                    clearInterval(interval);
+                    startButton.innerHTML = 'Your Turn';
+                }
             }, 1000);
         }//end of animate sequence
-        
-        function gameMove(bodypart){
-            bodypart.style.background = 'red';
+
+        //creating a function that animates each body part in a set amount of time
+        function computerMove(bodypart){
+            startButton.innerHTML = '...';
+            bodypart.style.background = 'pink';
             setTimeout(function(){
                 bodypart.style.background = '#fafafa';
-            }, 1000);
+            }, 500);
         }//end of gameMove function
 
-
-        //after the computer's turn, it signals the player's turn
-        setTimeout(function(){
-            startButton.innerHTML = 'Your Turn';
-            console.log(computerSequence);
-            //adding event listeners to all the body parts and pushing the player's clicks into the playerSequence array
+        console.log(computerSequence);
+        getPlayerSequence();
+        //adding event listeners to all the body parts
+        function getPlayerSequence(){
             for (let i = 0; i < possibleMoves.length; i++){
-                possibleMoves[i].addEventListener('click', function(){
-                    let playerMove = possibleMoves[i];
-                    playerSequence.push(possibleMoves[i]);
-                    playerMove.style.background = 'green';
-                    setTimeout(function(){
-                        playerMove.style.background = '#fafafa';
-                    }, 500);
-                    console.log(playerSequence);
-                    if (playerSequence.length === computerSequence.length){
-                        checkSequence();
-                    }
-                });
-            }
-        }, time); //end of player's turn functon
+            possibleMoves[i].addEventListener('click',function(){
+                let playerMove = possibleMoves[i];
+                if (playerSequence.length !== round){
+                    playerSequence.push(playerMove);
+                } 
+                if (playerSequence.length === round){
+                     checkSequence();
+                }
+                console.log(playerSequence);
+            }); 
+            
+            } 
+        } // end of get player sequence function  
     } //end of playRound function
-      
+    
+
     function checkSequence(){
-        console.log('checking sequence');
-            for (let i = 0; i < computerSequence.length; i++){
+        console.log('checking sequence', round);
+        if (playerSequence.length === computerSequence.length){
+            for (let i = 0; i < round; i++){
                 if(playerSequence[i] === computerSequence[i]){
-                    startButton.innerHTML = 'Great Job!';
-                    setTimeout(function(){
-                        round++;
-                        time = time + 1000;
-                        roundDisplay.innerHTML = round;
-                        playerSequence = [];
-                        playRound();
-                    }, 1000);
+                    continue;
                     
-                }   else {
+                }   
+                else {
                     startButton.innerHTML = 'Uh Oh!';
-                    restartButton.addEventListener('click', startGame);
                     restartButton.style.display = 'inline-block';
                     console.log('game over');
-                    //make rounds back to equal 1
                     break;
                 }
             }
+            startButton.innerHTML = 'Great Job!';
+            setTimeout(function(){
+                round++;
+                time = time + 1000;
+                roundDisplay.innerHTML = round;
+                playerSequence = [];
+                playRound();
+            }, 1000);
         }
+    }
 } //end of startGame
 
 
@@ -117,8 +121,16 @@ function showInstructions(){
 
 
 window.onload = function() {
-    // setting an event listener to start the game when the start button is clicked
+    // setting an event listener to start the game when the start button or restart button is clicked
     document.querySelector('#start').addEventListener('click', startGame);
+    document.querySelector('#restart').addEventListener('click', startGame);
     // setting an event listener to display the game instructions on the click
     document.querySelector('#instructions').addEventListener('click', showInstructions);
 }
+
+
+
+                   // playerMove.style.background = 'green';
+                    //     setTimeout(function(){
+                    //         playerMove.style.background = '#fafafa';
+                    //     }, 500);
