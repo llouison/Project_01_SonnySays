@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho');
 html {
-    min-height: 100%;
+    height: 100vh;
 }
 body {
     background: linear-gradient(#e8f7f4,#C7EAE4);
@@ -8,6 +8,7 @@ body {
     font-size: 30px;
     color: #495159;
     overflow: hidden;
+    min-height: 100%;
 }
 h1 {
     font-family: 'Rancho', cursive;
@@ -126,14 +127,16 @@ h1 {
     padding: 10px;
 }
 /* ###### BUNNY ###### */
+.bunny_container{
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+}
 #bunny {
     width: 300px;
     height: 500px;
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 100px;
-    left: 40vw;
+    position: relative;
+    left: -50%;
     z-index: 1;
 }
 #left_ear, #right_ear {
@@ -288,6 +291,7 @@ h1 {
     background: #86AF49;
     position: absolute;
     bottom: 0;
+    text-align: center;
 }
 .grass_container {
     width: 100vw;
@@ -296,14 +300,14 @@ h1 {
     bottom: 100px; 
 }
 .grass {
-    height: 9vmin;
+    height: 6vmin;
     width: 1vmin;
     border-right: 1px solid #86AF49;
     border-left: 1px solid #86AF49;
     background: #86AF49;
     position: absolute;
     display: inline-block;
-    bottom: -1vh;
+    bottom: 12vh;
     animation: grassmove 0.5s infinite alternate;
 }
 .g1 {
@@ -312,11 +316,11 @@ h1 {
 }
 .g2 {
     transform: rotate(7deg);
-    left: 12vw;
+    left: 11.5vw;
 }
 .g3 {
     transform: rotate(7deg);
-    right: 10vw;
+    right: 10.5vw;
 }
 .g4 {
     transform: rotate(-7deg);
@@ -338,11 +342,17 @@ h1 {
 }
 #ground p {
     font-size: 25px;
-    position: absolute;
-    bottom: 5px;
+    position: relative;
+    top: 50px;
     color: #b6d686;
-    left: 50%;
 }
 #ground a {
     color: #b6d686;
+}
+
+/*###### CELL PHONE ######
+ ###### MEDIA QUERY ######*/
+@media only screen and (max-width: 500px) {
+
+
 }
