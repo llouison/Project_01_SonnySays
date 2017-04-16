@@ -2,12 +2,16 @@ console.log('Let\'s Play Sonny Says!');
 
     //creating variables for the game
     var startButton = document.querySelector('#start');
-    var restartButton = document.querySelector('#restart');
-    restartButton.style.display = 'none';
     var roundDisplay = document.querySelector('#display');
     var round = 1;
     var time = 1000;
     var computerSequence = [];
+    var sound = new Audio();
+    sound.src = 'assets/tick.mp3';
+    var sound2 = new Audio();
+    sound2.src = 'assets/tada.mp3';
+    var sound3 = new Audio();
+    sound3.src = 'assets/oops.mp3';
     
     //locating the bunny body parts
     var a = document.querySelector('#left_ear');
@@ -46,6 +50,7 @@ console.log('Let\'s Play Sonny Says!');
         function computerMove(bodypart){
             startButton.innerHTML = '...';
             bodypart.style.background = 'pink';
+            sound.play();
             setTimeout(function(){
                 bodypart.style.background = '#fafafa';
             }, 500);
@@ -68,6 +73,7 @@ console.log('Let\'s Play Sonny Says!');
         let playerMove = document.querySelector('#' + event.target.id);
         if (playerSequence.length !== round){
             playerSequence.push(playerMove);
+            sound.play();
         } 
         if (playerSequence.length === round){
             console.log('player plays', playerSequence);
@@ -85,6 +91,7 @@ console.log('Let\'s Play Sonny Says!');
         });
          if(is_same && round === 3) {
             startButton.innerHTML = 'You Win!';
+            sound2.play();
             setTimeout(function(){
                 round = 1;            
                 time = 1000;
@@ -106,6 +113,7 @@ console.log('Let\'s Play Sonny Says!');
         }
         else {
             startButton.innerHTML = 'Uh Oh!';
+            sound3.play();
             console.log('game over');
              setTimeout(function(){
                 round = 1;            
