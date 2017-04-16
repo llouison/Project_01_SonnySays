@@ -1,39 +1,39 @@
 console.log('connected');
 
-function startGame(){
+// function startGame(){
     //creating variables for the game
-    const startButton = document.querySelector('#start');
-    const restartButton = document.querySelector('#restart');
+    var startButton = document.querySelector('#start');
+    var restartButton = document.querySelector('#restart');
     restartButton.style.display = 'none';
-    let round = 1;
-    let roundDisplay = document.querySelector('#display');
-    let time = 1000;
-    let computerSequence = [];
-    let playerSequence = [];
+    var round = 1;
+    var roundDisplay = document.querySelector('#display');
+    var time = 1000;
+    var computerSequence = [];
+    // var playerSequence = [];
     
     //locating the bunny body parts
-    const a = document.querySelector('#left_ear');
-    const b = document.querySelector('#right_ear');
-    const c = document.querySelector('#left_paw');
-    const d = document.querySelector('#right_paw');
-    const e = document.querySelector('#left_leg');
-    const f = document.querySelector('#right_leg');
+    var a = document.querySelector('#left_ear');
+    var b = document.querySelector('#right_ear');
+    var c = document.querySelector('#left_paw');
+    var d = document.querySelector('#right_paw');
+    var e = document.querySelector('#left_leg');
+    var f = document.querySelector('#right_leg');
     //creating an array of the possible moves
-    const possibleMoves = [a, b, c, d, e, f];
+    var possibleMoves = [a, b, c, d, e, f];
     //initiating the game
-    playRound();
+    // playRound();
 
 
 
 
     function playRound(){
         // disabling the start button
-        startButton.removeEventListener('click', startGame);
+        // startButton.removeEventListener('click', startGame);
         // changing the inner html to '...' while the computer plays
         
         //creating a for loop that loops through the possible moves and places one into the empty computersequence array
         for (let i = 0; i < 1; i++){
-            computerSequence.push(possibleMoves[Math.floor(Math.random() * possibleMoves.length)]);
+            computerSequence.push(possibleMoves[Math.floor(Math.random() * 6)]);
             animateSequence();
         }
     
@@ -58,54 +58,61 @@ function startGame(){
                 bodypart.style.background = '#fafafa';
             }, 500);
         }//end of gameMove function
-
-        console.log(computerSequence);
+        console.log('computer plays', computerSequence);
         getPlayerSequence();
-        //adding event listeners to all the body parts
-        function getPlayerSequence(){
-            for (let i = 0; i < possibleMoves.length; i++){
-            possibleMoves[i].addEventListener('click',function(){
-                let playerMove = possibleMoves[i];
-                if (playerSequence.length !== round){
-                    playerSequence.push(playerMove);
-                } 
-                if (playerSequence.length === round){
-                     checkSequence();
-                }
-                console.log(playerSequence);
-            }); 
+    } //new playround end
+        
+
+    //adding event listeners to all the body parts
+    function getPlayerSequence(){
+        playerSequence = [];
+        for (let i = 0; i < possibleMoves.length; i++){
+    	    possibleMoves[i].addEventListener('click',listenMove);
+        }
+    } // end of get player sequence function
             
-            } 
-        } // end of get player sequence function  
-    } //end of playRound function
-    
+    function listenMove(event){
+    // console.log(event.target.id);
+    // console.log(event);      
+        let playerMove = document.querySelector('#' + event.target.id);
+
+        if (playerSequence.length !== round){
+            playerSequence.push(playerMove);
+        } 
+        if (playerSequence.length === round){
+            console.log('player plays', playerSequence);
+            document.querySelector('#bunny').removeEventListener('click', listenMove);
+            checkSequence();
+        }
+    } 
 
     function checkSequence(){
         console.log('checking sequence', round);
-        if (playerSequence.length === computerSequence.length){
-            for (let i = 0; i < round; i++){
-                if(playerSequence[i] === computerSequence[i]){
-                    continue;
-                    
-                }   
-                else {
-                    startButton.innerHTML = 'Uh Oh!';
-                    restartButton.style.display = 'inline-block';
-                    console.log('game over');
-                    break;
-                }
-            }
+        var is_same = computerSequence.length == playerSequence.length && computerSequence.every(function(element, index) {
+            return element === playerSequence[index]; 
+        });
+         if(is_same && round === 5) {
+            startButton.innerHTML = 'You Win!';
+            return false;
+        }
+        if (is_same){
             startButton.innerHTML = 'Great Job!';
             setTimeout(function(){
                 round++;
                 time = time + 1000;
                 roundDisplay.innerHTML = round;
-                playerSequence = [];
                 playRound();
             }, 1000);
         }
+         
+        else {
+            startButton.innerHTML = 'Uh Oh!';
+            // restartButton.style.display = 'inline-block';
+            console.log('game over');
+            return false;
+        }
     }
-} //end of startGame
+// } //end of startGame
 
 
 //creating a function that toggles the instructions text on and off on the click of the tab
@@ -121,16 +128,8 @@ function showInstructions(){
 
 
 window.onload = function() {
-    // setting an event listener to start the game when the start button or restart button is clicked
-    document.querySelector('#start').addEventListener('click', startGame);
-    document.querySelector('#restart').addEventListener('click', startGame);
+//creating a function that toggles the instructions text on and off on the click of the ;
+    document.querySelector('#start').addEventListener('click', playRound);
     // setting an event listener to display the game instructions on the click
     document.querySelector('#instructions').addEventListener('click', showInstructions);
 }
-
-
-
-                   // playerMove.style.background = 'green';
-                    //     setTimeout(function(){
-                    //         playerMove.style.background = '#fafafa';
-                    //     }, 500);
