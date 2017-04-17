@@ -69,7 +69,11 @@ console.log('Let\'s Play Sonny Says!');
         let playerMove = document.querySelector('#' + event.target.id);
         if (playerSequence.length !== round){
             playerSequence.push(playerMove);
+            playerMove.style.background = 'pink';
             sound.play();
+            setTimeout(function(){
+                playerMove.style.background = '#fafafa';
+            }, 300);
         } 
         if (playerSequence.length === round){
             console.log('player plays', playerSequence);
