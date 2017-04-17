@@ -10,14 +10,14 @@ console.log('Let\'s Play Sonny Says!');
     sound.src = 'assets/tick.mp3';
     
     // locating the bunny body parts
-    var a = document.querySelector('#left_ear');
-    var b = document.querySelector('#right_ear');
-    var c = document.querySelector('#left_paw');
-    var d = document.querySelector('#right_paw');
-    var e = document.querySelector('#left_leg');
-    var f = document.querySelector('#right_leg');
+    var lEar = document.querySelector('#left_ear');
+    var rEar = document.querySelector('#right_ear');
+    var lPaw = document.querySelector('#left_paw');
+    var rPaw = document.querySelector('#right_paw');
+    var lLeg = document.querySelector('#left_leg');
+    var rLeg = document.querySelector('#right_leg');
     // creating an array of the possible moves
-    var possibleMoves = [a, b, c, d, e, f];
+    var possibleMoves = [lEar, rEar, lPaw, rPaw, lLeg, rLeg];
 
 
     function playRound(){
