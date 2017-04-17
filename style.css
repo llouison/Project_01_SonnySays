@@ -73,7 +73,7 @@ h1 {
     }
 }
 
-/* ###### START, RESTART & COUNTER ###### */
+/* ###### START & COUNTER ###### */
 .buttons {
     display: inline-block;
     position: absolute;
@@ -361,7 +361,7 @@ h1 {
 h1 {
     font-size: 60px;
 }
-/* ###### START, RESTART & COUNTER ###### */
+/* ###### START & COUNTER ###### */
 .buttons {
     display: block;
     position: absolute;
@@ -415,7 +415,7 @@ h1 {
 
 }
 @media only screen and (max-width: 450px) {
-/* ###### START, RESTART & COUNTER ###### */
+/* ###### START & COUNTER ###### */
 #start, #display {
     width: 65px;
     font-size: 25px;
