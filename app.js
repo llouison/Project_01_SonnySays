@@ -1,6 +1,6 @@
 console.log('Let\'s Play Sonny Says!');
 
-    //creating variables for the game
+    // creating variables for the game
     var startButton = document.querySelector('#start');
     var roundDisplay = document.querySelector('#display');
     var round = 1;
@@ -9,27 +9,27 @@ console.log('Let\'s Play Sonny Says!');
     var sound = new Audio();
     sound.src = 'assets/tick.mp3';
     
-    //locating the bunny body parts
+    // locating the bunny body parts
     var a = document.querySelector('#left_ear');
     var b = document.querySelector('#right_ear');
     var c = document.querySelector('#left_paw');
     var d = document.querySelector('#right_paw');
     var e = document.querySelector('#left_leg');
     var f = document.querySelector('#right_leg');
-    //creating an array of the possible moves
+    // creating an array of the possible moves
     var possibleMoves = [a, b, c, d, e, f];
 
 
     function playRound(){
         // disabling the start button
         startButton.removeEventListener('click', playRound);
-        //creating a for loop that loops through the possible moves and places one into the computersequence 
+        // creating a for loop that loops through the possible moves and places one into the computersequence 
         for (let i = 0; i < 1; i++){
             computerSequence.push(possibleMoves[Math.floor(Math.random() * 6)]);
             animateSequence();
         }
     
-        //creating a function that picks each body part in a set amount of time
+        // creating a function that picks each body part in a set amount of time
         function animateSequence(){
             let i = 0;
             const interval = setInterval(function() {
@@ -42,7 +42,7 @@ console.log('Let\'s Play Sonny Says!');
             }, 1000);
         }
 
-        //creating a function that animates each body part in a set amount of time
+        // creating a function that animates each body part in a set amount of time
         function computerMove(bodypart){
             startButton.innerHTML = '...';
             bodypart.style.background = 'pink';
@@ -56,7 +56,7 @@ console.log('Let\'s Play Sonny Says!');
     } // end of playround function
         
 
-    //adding event listeners to all the body parts
+    // adding event listeners to all the body parts
     function listenPlayerMove(){
         playerSequence = [];
         for (let i = 0; i < possibleMoves.length; i++){
@@ -86,6 +86,7 @@ console.log('Let\'s Play Sonny Says!');
     // checking to see if the playerSequence array is the same as the computer's
     function checkSequence(){
         console.log('checking sequence', round);
+        // found at http://jsfiddle.net/47WCQ/1/
         var is_same = computerSequence.length == playerSequence.length && computerSequence.every(function(element, index) {
             return element === playerSequence[index]; 
         });
@@ -133,7 +134,7 @@ console.log('Let\'s Play Sonny Says!');
 
 
 
-//creating a function that toggles the instructions text on and off on the click of the tab
+// creating a function that toggles the instructions text on and off on the click of the tab
 function showInstructions(){
     const instructions = document.querySelector('.instructions_text');
     if(instructions.style.display === 'none'){
@@ -146,7 +147,7 @@ function showInstructions(){
 
 
 window.onload = function() {
-    //setting an event listener to initiate the game on the click
+    // setting an event listener to initiate the game on the click
     document.querySelector('#start').addEventListener('click', playRound);
     // setting an event listener to display the game instructions on the click
     document.querySelector('#instructions').addEventListener('click', showInstructions);
