@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho');
+*{
+    margin: 0;
+    padding: 0;
+}
 html {
     height: 100vh;
 }
 body {
     background: linear-gradient(#e8f7f4,#C7EAE4);
+    background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
     color: #495159;
@@ -17,12 +22,13 @@ h1 {
     text-shadow: 2px 2px 4px #087E8B;
     text-align: center;
     padding-top: 10px;
+    margin: 0 auto;
 }
 
 /* ####### CLOUDS ###### */
 .cloud_container {
     height: 20vh;
-    width: 5076px;
+    width: 5000px;
     position: absolute;
     top: 0;
     z-index: -1;
@@ -102,10 +108,10 @@ h1 {
 /* ###### INSTRUCTIONS ###### */
 #instructions {
     display: block;
-    text-align: left;
     position: absolute;
     top: 45px;
     right: 30px;
+    margin: 0;
 }
 #instructions:hover {
     color: #EF5C6E;
@@ -114,23 +120,23 @@ h1 {
     text-decoration-style: dotted;
 }
 .instructions_text {
-    width: 430px;
-    padding: 20px;
+    width: 400px;
+    padding: 0 20px;
     background: rgba(250,250,250,0.55);
     border-radius: 15px;
     position: absolute;
     top: 180px;
-    right: 20px;
+    right: 30px;
     z-index: 2;
 }
-.instructions p {
-    padding: 10px;
+.instructions_text p {
+    padding: 10px 0 5px;
 }
 /* ###### BUNNY ###### */
 .bunny_container{
     position: absolute;
     left: 50%;
-    bottom: 100px;
+    bottom: 95px;
 }
 #bunny {
     width: 300px;
@@ -300,7 +306,7 @@ h1 {
     bottom: 100px; 
 }
 .grass {
-    height: 6vmin;
+    height: 6vh;
     width: 1vmin;
     border-right: 1px solid #86AF49;
     border-left: 1px solid #86AF49;
@@ -352,7 +358,132 @@ h1 {
 
 /*###### CELL PHONE ######
  ###### MEDIA QUERY ######*/
-@media only screen and (max-width: 500px) {
-
+@media only screen and (max-width: 450px) {
+/* ###### BUNNY ###### */
+#bunny {
+    width: 210px;
+    height: 350px;
+}
+#left_ear, #right_ear {
+    height: 135px;
+    width: 50px;
+    border: 13px solid #fafafa;
+}
+#left_ear {
+    left: 50px;
+}
+#right_ear {
+    left: 65px;
+}
+.bunny_head {
+    height: 140px;
+    width: 175px;
+    bottom: 262.5px;
+    left: 25px;
+}
+.left_eye, .right_eye {
+    width: 17.5px;
+    height: 17.5px;
+    border-bottom: 5px solid transparent;
+    border-top: 8px solid #21130C;
+    top: 40px;
+}
+.left_eye {
+    left: 52.5px;
+}
+.right_eye {
+    left: 70px;
+}
+.nose {
+    width: 14px; 
+    height: 10.5px; 
+    left: 28.5px;
+    top: 48px;
+}
+.bunny_body {
+    height: 210px;
+    width: 210px;
+}
+.egg {
+    height: 129.5px;
+    width: 105px;
+    left: 50px;
+    top: 35px;
+}
+#left_paw, #right_paw {
+    height: 35px;
+    width: 59.5px;
+    bottom: 42px;
+}
+#left_paw {
+    left: 10px;
+}
+#right_paw {
+    left: 66.5px;
+}
+#left_leg, #right_leg {
+    height: 35px;
+    width: 70px;
+    bottom: 178.5px;
+}
+#right_leg {
+    left: 63px;
+}
+}
+@media only screen and (max-width: 750px) {
+h1 {
+    font-size: 60px;
+}
+/* ###### START, RESTART & COUNTER ###### */
+.buttons {
+    display: block;
+    position: absolute;
+    top: 95px;
+    left: 50vw;
+}
+#start, #display {
+    width: 80px;
+    font-size: 40px;
+    border-radius: 5px;
+    display: block;
+}
+#start {
+    height: 80px;
+}
+#display {
+    top: -60px;
+    right: 121px;
+    z-index: -1;
+}
+/* ###### INSTRUCTIONS ###### */
+#instructions {
+    font-size: 25px;
+    top: 52
+    px;
+    right: 15px;
+}
+.instructions_text {
+    width: 350px;
+    background: rgba(250,250,250,0.85);
+    position: absolute;
+    top: 215px;
+    right: 30px;
+}
+/* ###### BUNNY ###### */
+.bunny_container {
+    bottom: 60px;
+}
+/* ###### GRASS ###### */
+#ground {
+    height: 70px;
+    width: 100vw;
+}
+.grass {
+    bottom: 8vh;
+}
+#ground p {
+    font-size: 20px;
+    top: 35px;
+}
 
 }
