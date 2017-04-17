@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho');
 *{
     margin: 0;
     padding: 0;
@@ -358,78 +357,6 @@ h1 {
 
 /*###### CELL PHONE ######
  ###### MEDIA QUERY ######*/
-@media only screen and (max-width: 450px) {
-/* ###### BUNNY ###### */
-#bunny {
-    width: 210px;
-    height: 350px;
-}
-#left_ear, #right_ear {
-    height: 135px;
-    width: 50px;
-    border: 13px solid #fafafa;
-}
-#left_ear {
-    left: 50px;
-}
-#right_ear {
-    left: 65px;
-}
-.bunny_head {
-    height: 140px;
-    width: 175px;
-    bottom: 262.5px;
-    left: 25px;
-}
-.left_eye, .right_eye {
-    width: 17.5px;
-    height: 17.5px;
-    border-bottom: 5px solid transparent;
-    border-top: 8px solid #21130C;
-    top: 40px;
-}
-.left_eye {
-    left: 52.5px;
-}
-.right_eye {
-    left: 70px;
-}
-.nose {
-    width: 14px; 
-    height: 10.5px; 
-    left: 28.5px;
-    top: 48px;
-}
-.bunny_body {
-    height: 210px;
-    width: 210px;
-}
-.egg {
-    height: 129.5px;
-    width: 105px;
-    left: 50px;
-    top: 35px;
-}
-#left_paw, #right_paw {
-    height: 35px;
-    width: 59.5px;
-    bottom: 42px;
-}
-#left_paw {
-    left: 10px;
-}
-#right_paw {
-    left: 66.5px;
-}
-#left_leg, #right_leg {
-    height: 35px;
-    width: 70px;
-    bottom: 178.5px;
-}
-#right_leg {
-    left: 63px;
-}
-}
 @media only screen and (max-width: 750px) {
 h1 {
     font-size: 60px;
@@ -486,4 +413,107 @@ h1 {
     top: 35px;
 }
 
+}
+@media only screen and (max-width: 450px) {
+/* ###### START, RESTART & COUNTER ###### */
+#start, #display {
+    width: 65px;
+    font-size: 25px;
+    padding: 5px 7px 12px;
+}
+#start {
+    height: 40px;
+}
+#display {
+    top: -57px;
+    right: 75px;
+}
+/* ###### INSTRUCTIONS ###### */
+#instructions {
+    font-size: 25px;
+    top: 52
+    px;
+    right: 15px;
+}
+.instructions_text {
+    width: 225px;
+    background: rgba(250,250,250,0.85);
+    border-radius: 5px;
+    position: absolute;
+    top: 85px;
+    right: 30px;
+}
+.instructions_text p {
+    font-size: 25px;
+}
+/* ###### BUNNY ###### */
+#bunny {
+    width: 210px;
+    height: 350px;
+}
+#left_ear, #right_ear {
+    height: 135px;
+    width: 50px;
+    border: 13px solid #fafafa;
+}
+#left_ear {
+    left: 50px;
+}
+#right_ear {
+    left: 65px;
+}
+.bunny_head {
+    height: 140px;
+    width: 175px;
+    bottom: 264px;
+    left: 20px;
+}
+.left_eye, .right_eye {
+    width: 17.5px;
+    height: 17.5px;
+    border-bottom: 5px solid transparent;
+    border-top: 8px solid #21130C;
+    top: 40px;
+}
+.left_eye {
+    left: 52.5px;
+}
+.right_eye {
+    left: 70px;
+}
+.nose {
+    width: 14px; 
+    height: 10.5px; 
+    left: 28.5px;
+    top: 48px;
+}
+.bunny_body {
+    height: 210px;
+    width: 210px;
+}
+.egg {
+    height: 129.5px;
+    width: 105px;
+    left: 50px;
+    top: 35px;
+}
+#left_paw, #right_paw {
+    height: 35px;
+    width: 59.5px;
+    bottom: 42px;
+}
+#left_paw {
+    left: 10px;
+}
+#right_paw {
+    left: 66.5px;
+}
+#left_leg, #right_leg {
+    height: 35px;
+    width: 70px;
+    bottom: 178.5px;
+}
+#right_leg {
+    left: 63px;
+}
 }
