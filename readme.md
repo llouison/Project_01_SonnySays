@@ -43,3 +43,5 @@ The objective of the game is to correctly repeat a longer and longer sequence of
 5. If you fail to repeat a sequence exactly, Sonny responds with 'woops!'. This means you've lost, and the sequence of movements ends.
 
 ## Unsolved Problems
+- The game is created using global variables. Once I tried to change my variable declarations to const and let, it got wonky. 
+- I think the only class I used was Audio. I couldn't figure out how to create a class since every function was interdependent.
