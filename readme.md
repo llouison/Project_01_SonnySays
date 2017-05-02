@@ -17,7 +17,7 @@ As a user, I want to play a fun and interactive single player game with clear in
 ![Sonny Says Wireframe5](assets/sonnysays_wireframe5.png)
 
 ## Technologies Used
-Sonny Says was created using html5, css3, and vanilla javascript
+Sonny Says was created using html5, css3, and vanilla javascript logic and dom manipulation
 
 ## Approach taken
 1. The first thing I tackled was the html and css. Because I'm a visual person, I found it easier to manipulate elements I could see. One big part of my project was testing myself with css animations, so I spent a lot of time working on those.
